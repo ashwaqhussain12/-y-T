@@ -22,6 +22,9 @@ for x in range(0,10000,1):
  avg.append(avg3)
  if x == 9999 :
   print(" ",avg)
+def to_matrix(avg):
+	return [avg[i:i+100] for i in range(0, len(avg), 100)]
+print(to_matrix(avg))
 #newavg = np.reshape(avg, (-1, 100))
 #print(np.matrix(newavg))
 #for p in range(100):
