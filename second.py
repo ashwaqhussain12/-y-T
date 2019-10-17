@@ -31,6 +31,15 @@ print(to_matrix(avg))
     #for q in range(100):
         #print '{:4}'.format(newavg[p][q]),
     #print
+matqq = avg.copy()
+matqq = np.reshape(matqq,(25,20,20))
+print("\narray reshaped: \n", matqq)
+#print(matqq.shape)
+#matq = [avg[i * 20:(i + 1) * 20] for i in range((len(avg) + 19) // 20 )]  
+#print (matq)
+tensorc=np.concatenate((matqq,matqq))
+#tensorc = np.array(matq)
+print(tensorc.shape)
 print(len(avg))
 print(math.sqrt(size))
 #for x in range(10000):
