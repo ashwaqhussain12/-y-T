@@ -45,5 +45,18 @@ print(math.sqrt(size))
 #for x in range(10000):
  #cv2.imshow("image", tiles[x])
 #print(im[1,2,2])
+from tensorly.decomposition import tucker
+tensorcpy=tensorc.copy()
+core, factors = tucker(tensorcpy, ranks=[50, 20, 20])
+print(core.shape)
+#tucker(tensorcpy, rank=None, ranks=None, n_iter_max=100, init='svd', svd='numpy_svd', tol=0.0001, random_state=None, verbose=False)
+len(factors)
+print(factors[0].shape)
+print(factors[1].shape)
+print(factors[2].shape)
+A = factors[0]
+B = factors[1]
+C = factors[2]
+print(A,B,C)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
