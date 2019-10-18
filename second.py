@@ -58,5 +58,47 @@ A = factors[0]
 B = factors[1]
 C = factors[2]
 print(A,B,C)
+#mean of the A,B,C
+mean_A = A.mean(axis=0)
+mean_B = B.mean(axis=0)
+mean_C = C.mean(axis=0)
+
+mean_of_ma = mean_A.mean(axis=0)
+mean_of_mb = mean_B.mean(axis=0)
+mean_of_mc = mean_C.mean(axis=0)
+
+def compare_a(number):
+    if number < mean_of_ma:
+        return 0
+    else:
+        return 1
+
+mean_compare_bin_a = list(map(compare_a , mean_A))
+
+len(mean_compare_bin_a)
+print(mean_compare_bin_a)
+
+def compare_b(number):
+    if number < mean_of_mb:
+        return 0
+    else:
+        return 1
+mean_compare_bin_b = list(map(compare_b , mean_B))
+
+def compare_c(number):
+    if number < mean_of_mc:
+        return 0
+    else:
+        return 1
+mean_compare_bin_c = list(map(compare_c , mean_C))
+
+print(mean_compare_bin_b)
+print(mean_compare_bin_c)
+
+final_hash_bin = mean_compare_bin_a + mean_compare_bin_b + mean_compare_bin_c
+
+print(final_hash_bin)
+print(len(final_hash_bin))
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
