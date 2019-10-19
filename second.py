@@ -111,5 +111,22 @@ img2 = cv2.imread('gray_image2.png',cv2.IMREAD_GRAYSCALE)
 hashval1 = hashfinder(img1)
 hashval2 = hashfinder(img2)
 
+#hamming distance 
+'''
+1. Ha and Hb are two arguments which are the final binary hashes of two different images which are numpy arrays
+2. the function returns the hamming distance
+'''
+def hamming_distance(Ha , Hb):
+#   diff = Ha - Hb
+#   diff = abs(diff)**2
+#   diff = np.sum(diff)
+  return np.sum(abs(Ha - Hb))
+#   print(int(diff))
+  
+  
+# var = hamming_distance(A,B)
+df = hamming_distance(Hashval1,Hashval2)
+print(df)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
