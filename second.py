@@ -20,7 +20,7 @@ def hashfinder(gray_img):
    for j in range(10):
     #print (" ",globals()['string%s' % x][i,j])
     sum=sum+globals()['string%s' % x][i,j]
-  avg3=sum/10
+  avg3=sum/100
   avg.append(avg3)
   if x == 9999 :
    print(" ",avg)
